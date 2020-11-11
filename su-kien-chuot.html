@@ -7,23 +7,31 @@
 <body>
 <form>
     <img id="myImage" src="https://png.pngtree.com/png-clipart/20190921/original/pngtree-a-blue-yellow-football-png-image_4702482.jpg"
-    width="200px">
-    <p>Click button below to move the image to right</p>
-    <input type="button" value="Click Me" onclick="moveRight()">
+    width="200px" style="position: relative; left: 570px; top: 100px">
+    <div style="position: relative; left: 500px; top: 100px"><p>Click button below to move the image to evrywhere</p>
+    <input type="button" value="Move Right" onclick="moveRight()">
+    <input type="button" value="Move Left" onclick="moveLeft()">
+    <input type="button" value="Move Up" onclick="moveUp()">
+    <input type="button" value="Move Down" onclick="moveDown()">
+    </div>
 </form>
 </body>
 </html>
 <script>
-    function init() {
-        let imgObj;
-        imgObj = document.getElementById('myImage');
-        imgObj.style.position = 'relative';
-        imgObj.style.left = '0px';
-    }
     function moveRight() {
-        let imgObj;
-        imgObj = document.getElementById('myImage');
-        imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+        var pic = document.getElementById('myImage');
+        pic.style.left = parseInt(pic.style.left) + 10 + 'px';
     }
-    window.onload = init;
+    function moveLeft() {
+        var pic = document.getElementById('myImage');
+        pic.style.left = parseInt(pic.style.left) - 10 + 'px';
+    }
+    function moveUp() {
+        var pic = document.getElementById('myImage');
+        pic.style.top = parseInt(pic.style.top) - 5 + 'px';
+    }
+    function moveDown() {
+        var pic = document.getElementById('myImage');
+        pic.style.top = parseInt(pic.style.top) + 5 + 'px';
+    }
 </script>
